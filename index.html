@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./style/style.css" />
+		<title>Boid Flocking</title>
+	</head>
+	<body>
+		<div class="canvasWrapper">
+			<canvas id="boidCanvas"> </canvas>
+			<div class="inputContainer">
+				<div class="sliderWrapper">
+					<label for="cohesion">Cohesion</label>
+					<input
+						type="range"
+						name="cohesion"
+						id="cohesion"
+						min="0"
+						max="2"
+						step=".25"
+						value="1"
+					/>
+				</div>
+
+				<div class="sliderWrapper">
+					<label for="separation">Separation</label>
+					<input
+						type="range"
+						name="separation"
+						id="separation"
+						min="0"
+						max="2"
+						step=".25"
+						value="1"
+					/>
+				</div>
+
+				<div class="sliderWrapper">
+					<label for="alignment">Alignment</label>
+					<input
+						type="range"
+						name="alignment"
+						id="alignment"
+						min="0"
+						max="2"
+						step=".25"
+						value="1"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<h1 class="pageTitle">Boid Flocking</h1>
+
+		<div class="descriptionWrapper">
+			<h2 class="sectionTitle">What is Boid Flocking?</h2>
+			<p class="sectionText">
+				Boid Flocking is an algorithm that was developed in 1986 by Craig
+				Reynolds to simulate the flocking behavior of birds. The term "boid" is
+				short for "bird-oid object".
+			</p>
+			<h2 class="sectionTitle">How does it work?</h2>
+			<p class="sectionText">Each boid follows three rules:</p>
+			<ol>
+				<li>
+					Cohesion - the boid will try to occupy the center of the boids within
+					it's visual range
+				</li>
+				<li>
+					Separation - the boid will try to avoid colliding with the boids
+					around it
+				</li>
+				<li>
+					Alignment - the boid will try and match it's velocity (speed and
+					direction) to the boids within it's visual range
+				</li>
+			</ol>
+			<p class="sectionText">
+				The behavior of the flock can be modified by changing how much "force"
+				is applied to the boids by each rule. For instance, if we were to lower
+				the separation force, then the boids in the flock would fly closer
+				together. If we were to turn the separation rule off completely, then
+				the boids would not try to maintain distance from each other and would
+				all overlap each other (you can try this by sliding the separation
+				slider all the way to the left).
+			</p>
+			<h2 class="sectionTitle">How is this implemented in my code?</h2>
+			<p class="sectionText">
+				Source code for my boid flocking implementation can be found on my
+				<a href="https://github.com/marcusL1019/boidFlocking">GitHub</a>.
+			</p>
+			<p class="sectionText">
+				A boid class is defined in a separate script (boid.js) which contains
+				methods that control the behavior of each boid. These methods include
+				the three rules mentioned above, as well as methods which control the
+				boid behavior when they approach the edge of the canvas, calculate
+				distance between a boid and another boid, and limit the speed of each
+				boid so they dont fly too fast.
+			</p>
+			<p class="sectionText">
+				Another script (main.js) sets the size of the canvas, creates the boids
+				and adds them to an array, and then runs the animation function which
+				updates the positions of each boid and then schedules another animation
+				frame which calls the animation function.
+			</p>
+			<p class="sectionText">
+				psuedocode provided by the following
+				<a href="http://www.kfish.org/boids/pseudocode.html">resource [1]</a>
+				was used to help implement the three rules, with some further guidance
+				provided by the following
+				<a href="https://eater.net/boids">boid flocking implementation [2]</a>.
+			</p>
+			<h2 class="sectionTitle">References</h2>
+			<ol>
+				<li>
+					<a href="http://www.kfish.org/boids/pseudocode.html"
+						>http://www.kfish.org/boids/pseudocode.html</a
+					>
+				</li>
+				<li><a href="https://eater.net/boids">https://eater.net/boids</a></li>
+			</ol>
+		</div>
+
+		<script src="./scripts/boid.js"></script>
+		<script src="./scripts/main.js"></script>
+	</body>
+</html>

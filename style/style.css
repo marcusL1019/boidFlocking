@@ -1,0 +1,105 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	width: 100vw;
+	min-height: 100vh;
+	background-color: rgb(59, 56, 95);
+}
+
+.canvasWrapper {
+	display: inline-block;
+	margin-left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+#boidCanvas {
+	background-color: rgb(36, 34, 56);
+	margin-top: 2em;
+	display: block;
+}
+
+.inputContainer {
+	width: 100%;
+	height: auto;
+	background-color: rgba(0, 0, 0, 0.25);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: space-evenly;
+	-ms-flex-pack: space-evenly;
+	justify-content: space-evenly;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: white;
+}
+
+.sliderWrapper {
+	padding: 1em 0;
+}
+
+.pageTitle {
+	text-align: center;
+	margin-top: 1em;
+	color: white;
+}
+
+.descriptionWrapper {
+	max-width: 1100px;
+	margin: 1em auto;
+	padding: 0 1em;
+	color: white;
+	margin-bottom: 3em;
+}
+
+ol {
+	list-style-position: inside;
+	margin-left: 1em;
+	margin-bottom: 1em;
+}
+
+li {
+	margin-top: 1em;
+}
+
+h3,
+h2 {
+	margin-top: 1em;
+}
+
+p + p {
+	margin-top: 1em;
+}
+
+a {
+	color: #37f29a;
+}
+
+@media only screen and (max-width: 1024px) {
+	.inputContainer {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}
